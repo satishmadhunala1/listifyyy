@@ -1,11 +1,12 @@
 import axios from "axios";
 
 // Use absolute URL to avoid issues
-const API_URL = "https://listifyyy-backend.onrender.com/api/auth";
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/auth";
 
 // Create axios instance
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: import.meta.env.VITE_API_URL || API_URL,
   headers: {
     "Content-Type": "application/json",
   },
