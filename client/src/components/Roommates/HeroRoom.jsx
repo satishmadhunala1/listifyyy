@@ -1,0 +1,239 @@
+import React, { useState } from "react";
+import { Search, DoorOpen, Building2, MapPin, ChevronDown } from "lucide-react";
+
+export default function HeroRoom() {
+  const [searchType, setSearchType] = useState("Need a Room for Share");
+  const [propertyType, setPropertyType] = useState("Single Room");
+  const [locationType, setLocationType] = useState("By Metros");
+  const [location, setLocation] = useState("");
+  const [gender, setGender] = useState("Any");
+  const [priceRange, setPriceRange] = useState("$100-$500");
+
+  const searchTypes = [
+    "Need a Room for Share",
+    "Need a Property for Rent", 
+    "Have a Room to Share",
+    "Have a Property for Rent",
+    "Have a Commercial space to Rent"
+  ];
+
+  const propertyTypes = [
+    "Single Room",
+    "Shared Room", 
+    "Paying Guest",
+    "Entire Apartment",
+    "Studio",
+    "House",
+    "Condominium"
+  ];
+
+  const locationTypes = [
+    "By Metros",
+    "By City",
+    "By Neighbourhood", 
+    "By County",
+    "By Apartment",
+    "By States",
+    "By University",
+    "By Landmark"
+  ];
+
+  const genders = [
+    "Any",
+    "Male Only",
+    "Female Only",
+    "Couples Only",
+    "Family Only"
+  ];
+
+  const priceRanges = [
+    "$100-$500",
+    "$500-$1000", 
+    "$1000-$1500",
+    "$1500-$2000",
+    "$2000-$2500",
+    "$2500+"
+  ];
+
+  return (
+    <div className=" z-0">
+      {/* FULL WIDTH IMAGE WITH 50% HEIGHT */}
+      <div className=" w-full h-[50vh] min-h-[500px] max-h-[600px]">
+        <img
+          src="/roommates3.jpg" 
+          alt="Roommates"
+          className="w-full hidden lg:flex h-full object-cover z-0 object-center"
+        />
+
+        {/* CONTENT OVERLAY */}
+        <div>
+          <div className="lg:container mx-auto lg:px-6 h-full flex items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 w-full">
+              {/* LEFT SIDE - Text & Buttons */}
+              <div className="space-y-8 text-white">
+                {/* Room for Rent & Property for Rent Buttons */}
+                <div className="lg:mt-50 absolute top-62 lg:right-130 left-70 flex-col items-center flex justify-center sm:flex-row gap-4">
+                  <div className="cursor-pointer group ">
+                    <div className="bg-white/10 backdrop-blur-sm group-hover:bg-white/20 border border-white/30 rounded-2xl p-6 w-full sm:w-48 flex flex-col items-center transition duration-300 shadow-lg hover:shadow-xl">
+                      <DoorOpen className="w-12 h-12 mb-3 text-white drop-shadow" />
+                      <p className="font-medium text-white text-md">
+                        Room for Rent
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="cursor-pointer group">
+                    <div className="bg-white/10 backdrop-blur-sm group-hover:bg-white/20 border border-white/30 rounded-2xl p-6 w-full sm:w-48 flex flex-col items-center transition duration-300 shadow-lg hover:shadow-xl">
+                      <Building2 className="w-12 h-12 mb-3 text-white drop-shadow" />
+                      <p className="font-medium text-white text-md">
+                        Property for Rent
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* COMPACT SINGLE ROW SEARCH BAR */}
+              <div className="bg-white absolute lg:top-150   lg:right-30 rounded-3xl shadow-2xl lg:p-6 p-4 border border-gray-200 w-full lg:max-w-7xl lg:mx-auto">
+                <div className="flex flex-col lg:flex-row items-end gap-3">
+                  {/* Search Type */}
+                  <div className="lg:flex-1 md:min-w-[140px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      I'm Looking For
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full pl-2 pr-8 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none bg-white"
+                        value={searchType}
+                        onChange={(e) => setSearchType(e.target.value)}
+                      >
+                        {searchTypes.map((type) => (
+                          <option key={type} value={type}>{type}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Property Type */}
+                  <div className="flex-1 lg:min-w-[120px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      Property Type
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full pl-2 pr-8 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none bg-white"
+                        value={propertyType}
+                        onChange={(e) => setPropertyType(e.target.value)}
+                      >
+                        {propertyTypes.map((type) => (
+                          <option key={type} value={type}>{type}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Location Type */}
+                  <div className="flex-1 lg:min-w-[120px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      Search By
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full pl-2 pr-8 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none bg-white"
+                        value={locationType}
+                        onChange={(e) => setLocationType(e.target.value)}
+                      >
+                        {locationTypes.map((type) => (
+                          <option key={type} value={type}>{type}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Location Input */}
+                  <div className="flex-1 lg:min-w-[150px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      Location
+                    </label>
+                    <div className="relative">
+                      <MapPin className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        placeholder={`Enter ${locationType.toLowerCase()}...`}
+                        className="w-full pl-8 pr-3 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  {/* Gender */}
+                  <div className="flex-1 lg:min-w-[110px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      Gender
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full pl-2 pr-8 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none bg-white"
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                      >
+                        {genders.map((gender) => (
+                          <option key={gender} value={gender}>{gender}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Price Range */}
+                  <div className="flex-1 lg:min-w-[120px] w-full">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">
+                      Price Range
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full pl-2 pr-8 py-2 text-sm border border-gray-300 rounded-lg text-gray-700 
+                                 focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none bg-white"
+                        value={priceRange}
+                        onChange={(e) => setPriceRange(e.target.value)}
+                      >
+                        {priceRanges.map((range) => (
+                          <option key={range} value={range}>{range}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Search Button */}
+                  <div className="flex-1 lg:min-w-[100px] w-full">
+                    <button
+                      className="w-full flex items-center justify-center gap-2 bg-[#27bb97] hover:bg-[#1FA987] transition-colors
+                               text-white font-semibold rounded-lg px-4 py-2.5 
+                               shadow-lg hover:shadow-xl text-sm  hover:cyan-700 cursor-pointer"
+                    >
+                      <Search className="w-4 h-4" />
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-teal-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl"></div>
+      </div>
+    </div>
+  );
+}
