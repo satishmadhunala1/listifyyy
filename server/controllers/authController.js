@@ -821,13 +821,15 @@ exports.initiateRegister = async (req, res) => {
     // Set rate limiting attempts
     await RedisService.incrementRegistrationAttempts(email);
 
-    // ✅ SEND REAL EMAIL
-    try {
-      logger.info(`📤 Sending OTP email to: ${email}`);
-      await EmailService.sendOTPEmail(email, name, otp);
-      logger.info(`✅ Email sent successfully to ${email}`);
-    } catch (emailError) {
-      logger.error("❌ Failed to send email:", emailError.message);
+// ✅ SEND REAL EMAIL
+try {
+  logger.info(`📤 Sending OTP email to: ${email}`);
+  await EmailService.sendOTPEmail(email, name, otp);
+  logger.info(`✅ Email sent successfully to ${email}`);
+} catch (emailError) {
+  logger.error("❌ Failed to send email:", emailError.message);
+  
+}
 
       // Clean up if email fails
       await RedisService.deletePendingRegistration(email);
