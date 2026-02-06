@@ -105,7 +105,7 @@ const ProductDetail = () => {
       </div>
 
       {/* Main Content - Using same 60/40 layout */}
-      <div className="px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <div className="px-4 sm:px-6 lg:px-8 py-6 lg:py-6">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-12">
           {/* Left Column - Images - Takes 60% (6 columns) */}
           <div className="lg:col-span-6">

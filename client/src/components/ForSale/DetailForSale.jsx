@@ -74,7 +74,7 @@ const DetailForSale = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sticky Navigation */}
-      <div className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="bg-white shadow-sm top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <div className="flex items-center space-x-1.5 sm:space-x-2 text-sm text-gray-600 min-w-0 flex-1">
@@ -100,7 +100,7 @@ const DetailForSale = () => {
       </div>
 
       {/* Main Content - Updated with your UI design */}
-      <div className=" px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <div className=" px-4 sm:px-6 lg:px-8 py-6 lg:py-6">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-12">
           {/* Left Column - Images - Takes 60% (6 columns) */}
           <div className="lg:col-span-6">
