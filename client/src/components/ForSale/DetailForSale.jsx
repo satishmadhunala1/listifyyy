@@ -105,7 +105,7 @@ const DetailForSale = () => {
           {/* Left Column - Images - Takes 60% (6 columns) */}
           <div className="lg:col-span-6">
             {/* Main Image with Scroll Buttons */}
-            <div className="rounded-md mb-6 shadow-sm overflow-hidden bg-white p-4 relative">
+            <div className="rounded-md mb-6 shadow-sm overflow-hidden bg-white  relative">
               <div className="relative">
                 <img
                   src={productImages[selectedImageIndex]}

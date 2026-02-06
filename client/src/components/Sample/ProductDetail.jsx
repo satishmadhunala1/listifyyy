@@ -110,7 +110,7 @@ const ProductDetail = () => {
           {/* Left Column - Images - Takes 60% (6 columns) */}
           <div className="lg:col-span-6">
             {/* Main Image with Scroll Buttons */}
-            <div className="rounded-md mb-6 shadow-sm overflow-hidden bg-white p-4">
+            <div className="rounded-md mb-6 shadow-sm overflow-hidden bg-white">
               <div className="relative">
                 <img
                   src={productImages[selectedImageIndex]}
@@ -282,46 +282,6 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {/* Color Selection */}
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-xs font-bold mb-4 tracking-wider text-gray-700">
-                  AVAILABLE COLORS
-                </h3>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setSelectedColor("blue")}
-                    className={`w-9 h-9 rounded-full bg-blue-500 shadow-md ${
-                      selectedColor === "blue"
-                        ? "ring-2 ring-offset-2 ring-blue-500"
-                        : ""
-                    } transition`}
-                  />
-                  <button
-                    onClick={() => setSelectedColor("black")}
-                    className={`w-9 h-9 rounded-full bg-black shadow-md ${
-                      selectedColor === "black"
-                        ? "ring-2 ring-offset-2 ring-black"
-                        : ""
-                    } transition`}
-                  />
-                  <button
-                    onClick={() => setSelectedColor("white")}
-                    className={`w-9 h-9 rounded-full bg-gray-100 border border-gray-300 shadow-md ${
-                      selectedColor === "white"
-                        ? "ring-2 ring-offset-2 ring-gray-400"
-                        : ""
-                    } transition`}
-                  />
-                  <button
-                    onClick={() => setSelectedColor("red")}
-                    className={`w-9 h-9 rounded-full bg-red-500 shadow-md ${
-                      selectedColor === "red"
-                        ? "ring-2 ring-offset-2 ring-red-500"
-                        : ""
-                    } transition`}
-                  />
-                </div>
-              </div>
 
               {/* Seller Info */}
               <div className="bg-white rounded-lg shadow-sm p-6">
