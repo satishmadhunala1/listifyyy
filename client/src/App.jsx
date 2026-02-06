@@ -161,7 +161,11 @@ const AppContent = () => {
       {/* Main Content */}
       <main className="flex-grow">
         {/* CHANGED: Removed nested GoogleOAuthProvider wrapper */}
-        <Toaster position="top-right" />
+        <Toaster position="top-right"
+         toastOptions={{
+          duration: 3000, // closes automatically in 3 seconds
+        }}
+         />
         <Routes>
           {/* Home */}
           <Route

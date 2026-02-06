@@ -22,6 +22,8 @@ import {
   FaBell,
   FaUserCircle,
 } from "react-icons/fa";
+import toast from "react-hot-toast";
+
 import NavSearchBar from "./NavSearchBar";
 import {
   MdOutlineEventAvailable,
@@ -140,6 +142,7 @@ const Navbar = () => {
       logout();
       closeProfileDropdown();
       navigate("/");
+      toast.success('logout successfully')
     } else {
       navigate(path);
     }
@@ -946,6 +949,7 @@ const Navbar = () => {
                         setIsMobileMenuOpen(false);
                         logout();
                         navigate("/");
+                        toast.success("Logged out successfully"); 
                       }}
                       className={`nav-link px-3 py-2 text-xs sm:text-sm hover:bg-gray-100 rounded font-semibold text-left ${
                         isScrolled

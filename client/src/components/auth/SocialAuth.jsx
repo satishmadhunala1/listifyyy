@@ -63,7 +63,6 @@ const SocialAuth = ({ onSuccess, isSignUp = false }) => {
       const result = await googleLoginAction(idToken);
 
       if (result.payload?.success) {
-        toast.success("Google login successful!");
         navigate("/");
       } else {
         const errorMsg = result.payload?.error || "Google login failed";
